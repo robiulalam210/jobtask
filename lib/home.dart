@@ -25,7 +25,9 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         title: Text("Task Json"),
       ),
-      body: Container(
+      body:data!.isEmpty ? CircularProgressIndicator(): Container(
+        height: double.infinity,
+        width: double.infinity,
         child: Column(
           children: [
             Expanded(
