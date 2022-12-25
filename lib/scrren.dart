@@ -45,7 +45,7 @@ class _ScreenShowState extends State<ScreenShow> {
         centerTitle: true,
         title: Text("Task Json"),
       ),
-      body: Container(
+      body: data!.isEmpty ? CircularProgressIndicator():Container(
         height: double.infinity,
         width: double.infinity,
         child: Column(

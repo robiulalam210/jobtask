@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:jobtask/json_conveert.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,6 +10,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List? data;
+  List? data2;
+
+  Future readJsonInput1() async {
+    var response = await rootBundle.loadString('assets/data.json');
+
+    setState(() {
+      data = json.decode(response);
+    });
+  }
+
+  Future readJsonInput2() async {
+    final String response2 =
+    await rootBundle.loadString('assets/data_two.json');
+
+    setState(() {
+      data2 = json.decode(response2);
+    });
+  }
+
   @override
   void initState() {
     readJsonInput1();
